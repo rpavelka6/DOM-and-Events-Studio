@@ -43,7 +43,29 @@ window.addEventListener("load", function() {
 
             // Change the height of the shuttle
             document.getElementById("spaceShuttleHeight").innerHTML = String(0);
-            }
-        })
+        }
+    })
 
+    let upArrow = document.getElementById("Up");
+    upArrow.addEventListener("click", function(event) {
+        window.alert("up button clicked");
+    })
+    
+    let downArrow = document.getElementById("Down");
+    downArrow.addEventListener("click", function(event) {
+        window.alert("down button clicked");
+    })
+
+    let rightArrow = document.getElementById("Right");
+    rightArrow.addEventListener("click", function(event) {
+        rocket.width = rocket.width + 10;
+        console.log(rocket.width);
+        window.alert("right button clicked");
+    })
+
+    let leftArrow = document.getElementById("Left");
+    leftArrow.addEventListener("click", function(event) {
+        window.alert("left button clicked");
+    })
+           
 })
