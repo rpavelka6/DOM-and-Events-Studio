@@ -4,7 +4,7 @@ window.addEventListener("load", function() {
     let takeOff = document.getElementById("takeoff");
     takeOff.addEventListener("click", function(event) {
         if (window.confirm("Confirm that the shuttle is ready for takeoff")) {
-            flightStatus = 'Shuttle in flight';
+            document.getElementById("flightStatus").innerHTML = "Shuttle in flight";
             shuttleBackground.style.backgroundColor = "blue";
         };
         console.log("Take Off clicked");
