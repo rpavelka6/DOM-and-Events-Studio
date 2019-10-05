@@ -9,12 +9,12 @@ window.addEventListener("load", function() {
 
             // Change the background color of shuttle flight screen to blue
             document.getElementById("shuttleBackground").style.backgroundColor = "blue";
-            
+
             // Change the height of the shuttle
             let theHeight = document.getElementById("spaceShuttleHeight").innerHTML;
             theNewHeight = Number(theHeight) + 10000;
             document.getElementById("spaceShuttleHeight").innerHTML = String(theNewHeight);
-        };
+        }
     })
 
     let land = document.getElementById("landing");
@@ -30,4 +30,20 @@ window.addEventListener("load", function() {
         // Change the height of the shuttle
         document.getElementById("spaceShuttleHeight").innerHTML = String(0);
     })
+
+    let abortMission = document.getElementById("missionAbort");
+    abortMission.addEventListener("click", function(event) {
+        if (window.confirm("Confirm that you want to abort the mission.")) {
+
+            // Change the flight status on the screen
+            document.getElementById("flightStatus").innerHTML = "Mission aborted";
+
+            // Change the background color of shuttle flight screen to green
+            document.getElementById("shuttleBackground").style.backgroundColor = 'green';
+
+            // Change the height of the shuttle
+            document.getElementById("spaceShuttleHeight").innerHTML = String(0);
+            }
+        })
+
 })
