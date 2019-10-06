@@ -47,25 +47,39 @@ window.addEventListener("load", function() {
     })
 
     let upArrow = document.getElementById("Up");
+    let rocketYposition = rocket.style.top;
+    let rocketXposition = rocket.style.left;
+
     upArrow.addEventListener("click", function(event) {
-        window.alert("up button clicked");
+        rocketYposition -= 10;
+        rocket.style.top = rocketYposition + "px";
+        // Change the height of the shuttle
+        let theHeight = document.getElementById("spaceShuttleHeight").innerHTML;
+        theNewHeight = Number(theHeight) + 10000;
+        document.getElementById("spaceShuttleHeight").innerHTML = String(theNewHeight);
+    
     })
     
     let downArrow = document.getElementById("Down");
     downArrow.addEventListener("click", function(event) {
-        window.alert("down button clicked");
+        rocketYposition -= 10;
+        rocket.style.bottom = rocketYposition + "px";
+        // Change the height of the shuttle
+        let theHeight = document.getElementById("spaceShuttleHeight").innerHTML;
+        theNewHeight = Number(theHeight) - 10000;
+        document.getElementById("spaceShuttleHeight").innerHTML = String(theNewHeight);
     })
 
     let rightArrow = document.getElementById("Right");
     rightArrow.addEventListener("click", function(event) {
-        rocket.width = rocket.width + 10;
-        console.log(rocket.width);
-        window.alert("right button clicked");
+        rocketXposition += 10;
+        rocket.style.left = rocketXposition + "px";
     })
 
     let leftArrow = document.getElementById("Left");
     leftArrow.addEventListener("click", function(event) {
-        window.alert("left button clicked");
+        rocketXposition -= 10;
+        rocket.style.left = rocketXposition + "px";
     })
            
 })
