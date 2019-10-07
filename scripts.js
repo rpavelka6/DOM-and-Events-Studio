@@ -15,7 +15,7 @@ window.addEventListener("load", function() {
             theNewHeight = Number(theHeight) + 10000;
             document.getElementById("spaceShuttleHeight").innerHTML = String(theNewHeight);
         }
-    })
+    });
 
     let land = document.getElementById("landing");
     landing.addEventListener("click", function(event) {
@@ -29,7 +29,7 @@ window.addEventListener("load", function() {
 
         // Change the height of the shuttle
         document.getElementById("spaceShuttleHeight").innerHTML = String(0);
-    })
+    });
 
     let abortMission = document.getElementById("missionAbort");
     abortMission.addEventListener("click", function(event) {
@@ -44,42 +44,44 @@ window.addEventListener("load", function() {
             // Change the height of the shuttle
             document.getElementById("spaceShuttleHeight").innerHTML = String(0);
         }
-    })
+    });
 
     let upArrow = document.getElementById("Up");
-    let rocketYposition = rocket.style.top;
-    let rocketXposition = rocket.style.left;
+    let rocketY = rocket.style.offsetTop;
+    let rocketX = rocket.style.offsetLeft;
+    console.log(rocketY);
+    console.log(rocketX);
 
     upArrow.addEventListener("click", function(event) {
-        rocketYposition -= 10;
-        rocket.style.top = rocketYposition + "px";
+        rocketY -= 10;
+        rocket.style.top = rocketY + "px";
         // Change the height of the shuttle
         let theHeight = document.getElementById("spaceShuttleHeight").innerHTML;
         theNewHeight = Number(theHeight) + 10000;
         document.getElementById("spaceShuttleHeight").innerHTML = String(theNewHeight);
     
-    })
+    });
     
     let downArrow = document.getElementById("Down");
     downArrow.addEventListener("click", function(event) {
-        rocketYposition -= 10;
-        rocket.style.bottom = rocketYposition + "px";
+        rocketY -= 10;
+        rocket.style.top = rocketY - "px";
         // Change the height of the shuttle
         let theHeight = document.getElementById("spaceShuttleHeight").innerHTML;
         theNewHeight = Number(theHeight) - 10000;
         document.getElementById("spaceShuttleHeight").innerHTML = String(theNewHeight);
-    })
+    });
 
     let rightArrow = document.getElementById("Right");
     rightArrow.addEventListener("click", function(event) {
-        rocketXposition += 10;
-        rocket.style.left = rocketXposition + "px";
-    })
+        rocketX += 10;
+        rocket.style.left = rocketX + "px";
+    });
 
     let leftArrow = document.getElementById("Left");
     leftArrow.addEventListener("click", function(event) {
-        rocketXposition -= 10;
-        rocket.style.left = rocketXposition + "px";
-    })
+        rocketX -= 10;
+        rocket.style.left = rocketX + "px";
+    });
            
 })
